@@ -1,0 +1,8 @@
+<launch>
+  <node name="gps"
+        pkg="ros_f9p_driver"
+        type="gps.py"
+        output="screen">
+    <rosparam command="load" file="$(find ros_f9p_driver)/config/gps.yaml" />
+  </node>
+</launch>

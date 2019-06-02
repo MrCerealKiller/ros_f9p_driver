@@ -1,0 +1,4 @@
+port: '/dev/gps'
+baudrate: 460800
+timeout: 0.5
+gnssType: 'GN'

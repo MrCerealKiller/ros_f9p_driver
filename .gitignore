@@ -1,0 +1,8 @@
+# Compiled Python
+*.py[cod]
+
+# Temporary Files
+*~
+*.swo
+*.swp
+.DS_Store
