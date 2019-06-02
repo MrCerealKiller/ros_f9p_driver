@@ -1,4 +1,4 @@
-# ROS uBlox ZED-F9P Driver
+# ROS u-blox ZED-F9P Driver
 
 ## Description
 This is a simple driver that converts the NMEA strings provided by the ZED-F9P
