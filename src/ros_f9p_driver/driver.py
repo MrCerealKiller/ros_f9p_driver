@@ -130,6 +130,7 @@ class ZEDF9P(object):
     def publish(self):
         header = Header()
         header.stamp = rospy.Time.now()
+        header.frame_id = "base_link"
 
         navStatus = NavSatStatus()
         navStatus.status = (self.fixStatus - 1)
@@ -141,8 +142,10 @@ class ZEDF9P(object):
         gpsMsg.latitude = self.lat
         gpsMsg.longitude = self.long
         gpsMsg.altitude = self.alt
-        gpsMsg.position_covariance = self.covariance
-        gpsMsg.position_covariance_type = self.covariance_type
+        
+        if self.covariance:
+            gpsMsg.position_covariance = self.covariance
+            gpsMsg.position_covariance_type = self.covariance_type
 
         self.navSatPub.publish(gpsMsg)
         self.speedPub.publish(self.speed)
